@@ -1,0 +1,16 @@
+- name: Install memcached
+  apt: 
+    name: memcached
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Install memcached
+  yum: 
+    name: memcached
+  when: ansible_distribution == 'CentOS'
+
+  
+- name: Start memcached
+  service:
+    name: memcached
+    enabled: yes
+    state: restarted
