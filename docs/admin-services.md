@@ -3,8 +3,8 @@
 These commands you must know when you using the Memcached of Websoft9
 
 ```shell
-sudo systemctl start redis
-sudo systemctl stop redis
-sudo systemctl restart redis
-sudo systemctl status redis
+sudo systemctl start memcached
+sudo systemctl stop memcached
+sudo systemctl restart memcached
+sudo systemctl status memcached
 ```

@@ -26,4 +26,6 @@ yum update -y
 
 ## Memcached Upgrade
 
-There's not need to upgrade under the version 5.0.x. 
+If you can't upgrade Memcached version you want by apt/yum, you can use the install from source for your upgrade
+
+Refer to official docs: [Install from source](https://github.com/memcached/memcached/wiki/Install)

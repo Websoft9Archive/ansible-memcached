@@ -49,10 +49,5 @@ Manual backup for application is based on the **Exporting source code and databa
 ```
 The general manual backup operation steps are as follows:
 
-1. Use SSH to connect Memcached server, then run the **SAVE** on redis-cli
-```shell
-[root@cdl-test ~]# redis-cli
-127.0.0.1:6379> SAVE
-OK
-```
-2. You can find the bakcup file `dump.rdb` in the  */var/lib/redis*
+1. Use SSH to connect Memcached server, then backup the configuration file */data/config/memcached.conf*
+2. Backup completed

@@ -12,11 +12,14 @@ It is recommended to first check through the command.
 
 ```shell
 # restart mysql service
-sudo systemctl restart redis
+sudo systemctl restart memcached
 
 # view disk space
 df -lh
 
 # view memory rate
 free -lh 
+
+# view process
+ps aux
 ```

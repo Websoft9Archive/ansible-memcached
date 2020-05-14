@@ -52,14 +52,8 @@ sidebarDepth: 3
 - 技能要求：非常容易
 - 自动化：无
 ```
+
 通用的手动备份操作步骤如下：
 
-1. 使用SSH登录服务器，使用redis-cli工具运行**SAVE** 命令
-```shell
-[root@cdl-test ~]# redis-cli
-127.0.0.1:6379> SAVE
-OK
-```
-2. You can find the bakcup file `dump.rdb` in the  */var/lib/redis*
-
-
+1. 使用SFTP登录服务器，下载 Memcached 配置文件 */data/config/memcached.conf* 到本地
+2. 备份完成

@@ -2,27 +2,19 @@
 
 #### 什么是Memcached客户端？
 
-Memcached 客户端是用于与Memcached-Server进行通信的程序，例如：redis-cli 就是典型的客户端工具
-
-#### Memcached Labs 与 Memcached 有什么关系？
-
-[Memcached Labs](https://redislabs.com/) 是 Memcached 的母公司，即 Memcached 是 Memcached Labs 公司旗下的产品。
+Memcached 客户端是用于与Memcached-Server进行通信的程序，运行 `memcached -h` 命令查看
 
 #### Memcached需要密码才能登录吗？
 
-可以无需设置密码验证
-
-#### Memcached 支持哪些数据结构？
-
-Memcached不是简单的键值存储，它实际上是一个数据结构服务器，支持不同类型的值。包括：二进制字符串、列表、集合、哈希、位图、HyperLogLogs、流等
+无需设置密码验证
 
 #### 是否有可视化的数据库管理工具？
 
-部分Memcached镜像已经安装 MemcachedInsight 这个可视化管理工具，如果没有安装，您可以自行安装。
+暂无
 
 #### 是否可以修改Memcached的源码路径？
 
-不可以修改
+Memcached 仅提供一个二进制文件存放到bin目录即可，无需修改
 
 #### 部署和安装有什么区别？
 

@@ -2,31 +2,19 @@
 
 #### What is the Memcached client?
 
-Memcached client is a program used to communicate with Memcached-Server, for example: redis-cli is a typical client tool
-
-#### What's relationship between Memcached Labs and Memcached?
-
-[Memcached Labs](https://redislabs.com/) is the parent company of Memcached, that is, Memcached is a product of Memcached Labs.
+Memcached client is a program used to communicate with Memcached-Server, you can run the command `memcached -h` to show the help
 
 #### Does Memcached need a password to log in?
 
 No password authentication required
 
-#### What data structures does Memcached support?
-
-Memcached is not a plain key-value store, it is actually a data structures server, supporting different [kinds of values](https://redis.io/topics/data-types-intro)
-
 #### Is there a web-GUI tool for Memcached?
-
-Some Memcached images have already installed MemcachedInsight, a visual management tool. If not, you can install it yourself.
-
-#### Is there a web-base GUI database management tools?
 
 No
 
 #### Is it possible to modify the source path of Memcached?
 
-No
+Yes
 
 #### What's the difference between Deployment and Installation?
 

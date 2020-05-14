@@ -6,9 +6,8 @@ Memcached 预装包包含 Memcached 运行所需一序列支撑软件（简称�
 
 ### Memcached
 
-Memcached安装目录: */usr/share/memcached*
-Memcached配置文件目录：*/etc/memcached.conf*
-Memcached日志文件目录：*/var/log/memcached.log*
+Memcached 二进制文件: */usr/bin/memcached*  
+Memcached 配置文件：*/etc/sysconfig/memcached*  
 
 ### 其他
 
@@ -37,9 +36,12 @@ tcp6       0      0 :::11211                :::*                    LISTEN      
 组件版本号可以通过云市场商品页面查看。但部署到您的服务器之后，组件会自动进行更新导致版本号有一定的变化，故精准的版本号请通过在服务器上运行命令查看：
 
 ```shell
+# Check all components version
+sudo cat /data/logs/install_version.txt
+
 # Linux Version
 lsb_release -a
 
 # Memcached version
-yum info memcached
+memcached -h
 ```

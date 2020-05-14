@@ -22,9 +22,9 @@ yum update -y
 > 本部署包已预配置一个用于自动更新的计划任务。如果希望去掉自动更新，请删除对应的Cron
 
 
-## Memcached升级
+## Memcached 升级
 
-除了 Memcached 5.0 以上版本之外，Memcached已经是各个发行版的最新版本。
+如何通过包管理工具升级后的版本仍然不符合您的要求，您可以使用源码编译安装的方式升级Memcached
 
-如何更新 Memcached 5.0  到 Memcached 6.0 呢？ 暂时还没有方案
+详情参考官方文档：[源码编译安装](https://github.com/memcached/memcached/wiki/Install)
 

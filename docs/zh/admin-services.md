@@ -3,8 +3,8 @@
 使用由Websoft9提供的Memcached部署方案，可能需要用到的服务如下：
 
 ```shell
-sudo systemctl start redis
-sudo systemctl stop redis
-sudo systemctl restart redis
-sudo systemctl status redis
+sudo systemctl start memcached
+sudo systemctl stop memcached
+sudo systemctl restart memcached
+sudo systemctl status memcached
 ```

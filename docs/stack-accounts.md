@@ -20,4 +20,4 @@ Not set credentials for Memcached
    |  AWS's AmazonLinux   |  ec2-user   | [How to enable root access?](https://support.websoft9.com/docs/aws/server-login.html#sample2-enable-the-root-username) |
    |  Alibaba Cloud, HUAWEI CLOUD, Tencent Cloud |  root   |
 
-If don't remember the password of Linux, you should reset password on Cloud Console
+> If don't remember the password of Linux, you should reset password on Cloud Console
