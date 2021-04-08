@@ -1,0 +1,21 @@
+---
+- name: Delete memcached dir for sec_installation
+  shell: rm -rf /data/memcached
+
+- name: Create dir for memcached
+  file:
+    path: "/data/memcached"
+    state: directory
+    recurse: yes
+
+- name: Clone memcached in Websoft9 
+  git:
+    repo: "{{memcached_git_url}}"
+    dest: "/data/memcached"
+
+- name: Run the docker-compose
+  shell: |
+    docker-compose up -d
+    sleep 30
+  args:
+    chdir: /data/memcached
