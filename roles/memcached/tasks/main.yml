@@ -11,7 +11,7 @@
     rm -rf docker-compose.yml
     [ -f docker-compose-production.yml ] && mv docker-compose-production.yml docker-compose.yml
     [ -f .env_all ] && mv .env_all .env
-    sed -i 's/APP_VERSION=.*/APP_VERSION=v{{memcached_version}}/g' /data/apps/memcached/.env
+    sed -i 's/APP_VERSION=.*/APP_VERSION={{memcached_version}}/g' /data/apps/memcached/.env
   args:
     chdir: '{{memcached_work_dir}}'
     
