@@ -31,4 +31,4 @@
     
 - name: Check memcached version
   shell: |
-    sudo echo "memcached version:" $(docker images |grep memcached |cut -d- -f4) |sudo tee -a /data/logs/install_version.txt 
+    sudo echo "memcached version:" $(docker images |grep memcached |awk '{print $1,$2}') |sudo tee -a /data/logs/install_version.txt 
