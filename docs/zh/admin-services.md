@@ -1,10 +1,10 @@
 # 服务启停
 
-使用由Websoft9提供的Memcached部署方案，可能需要用到的服务如下：
+使用由Websoft9提供的 Memcached 部署方案，可能需要用到的服务如下：
 
 ```shell
-sudo systemctl start memcached
-sudo systemctl stop memcached
-sudo systemctl restart memcached
-sudo systemctl status memcached
+sudo docker start memcached
+sudo docker stop memcached
+sudo docker restart memcached
+sudo docker stats memcached
 ```

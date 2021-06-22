@@ -11,7 +11,7 @@
 
 ```shell
 # 查看服务
-sudo systemctl status memcached
+sudo docker logs memcached
 
 # 查看磁盘空间
 df -lh

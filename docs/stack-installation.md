@@ -10,7 +10,10 @@ If you have completed the Memcached deployment on Cloud Platform, the following 
 
 ## Memcached check
 
-1. Use **SSH** tool to connect Memcached Server
+1. Use **SSH** tool to connect Memcached Server, then install Telnet
+   ```
+   yum install telnet
+   ```
 
 2. Use the telnet to connect Memcached
    ```
@@ -83,4 +86,9 @@ If you have completed the Memcached deployment on Cloud Platform, the following 
 Please make sure you Telnet installed and port **11211** enabled
 
 #### Is there any Web-GUI tool for Memcached in this deployment solution?
+
 No
+
+#### How did this deployment install Memcached?
+
+Docker

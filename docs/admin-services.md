@@ -3,8 +3,8 @@
 These commands you must know when you using the Memcached of Websoft9
 
 ```shell
-sudo systemctl start memcached
-sudo systemctl stop memcached
-sudo systemctl restart memcached
-sudo systemctl status memcached
+sudo docker start memcached
+sudo docker stop memcached
+sudo docker restart memcached
+sudo docker stats memcached
 ```

@@ -10,7 +10,10 @@
 
 ## Memcached 检验
 
-1. 通过 SSH 工具连接 Memcached服务器
+1. 通过 SSH 工具连接 Memcached服务器，安装 telnet
+   ```
+   yum install telnet
+   ```
 
 2. 运行 telnet 命令，连接 Memcached
    ```
@@ -85,3 +88,7 @@
 #### 本部署是否提供Web版的可视化管理工具？
 
 没有，我们暂时还没有发现稳定可靠的 Web-GUI for Memcached
+
+#### 本部署是如何安装 Memcached 的？
+
+Docker

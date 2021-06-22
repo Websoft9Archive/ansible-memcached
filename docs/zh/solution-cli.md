@@ -1,9 +1,42 @@
 # Memcached Commands
 
-使用SSH登录到 Memcached 服务器，运行`memcached -h`即可使用命令行工具
+Memcached 没有传统意义上的客户端，只有服务端命令 `memcached -h`，但本项目中采用 Docker 部署 Memcached，故无法直接使用服务端命令。  
 
+## 服务端
+
+服务端设置，需要在运行容器的时候带入命令，具体操作步骤：  
+
+1. 编辑 Memcached 容器编排文件 */data/apps/memcached/docker-compose.yml*，修改增加更多的 **command** 项，然后保存
+    ```
+    version: '3.8'
+    services:
+    memcached:
+        image: memcached:${APP_VERSION}
+        container_name: ${APP_CONTAINER_NAME}
+        restart: always
+        command:
+        - '-m 800'
+
+    ```
+
+2. 重新创建容器后生效
+   ```
+   cd /data/apps/memcached
+   sudo docker-compose up -d
+   ```
+
+## 客户端
+
+直接使用 Telnet 连接到 Memcached，便可以运行 Memcached 操作命令
+
+1. 远程登录到服务器，运行 telnet 命令，连接到 Memcached
 ```
-memcached -h
+telnet 127.0.0.1 11211
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
 ```
 
-> 详情查看官方文档：https://github.com/memcached/memcached/wiki/Commands
+2. 在交互式中输入 `stats` 查询系统信息
+
+> 详情查看[官方文档](https://github.com/memcached/memcached/wiki/Commands)

@@ -16,6 +16,8 @@
 | 私有云|  KVM, VMware, VirtualBox, OpenStack | 可选 |
 | 服务器配置 | 最低1核1G，安装时所需的带宽不低于10M |  建议采用按量100M带宽 |
 
+更多参考：[Hardware Requirements](https://github.com/memcached/memcached/wiki/Hardware)
+
 ## 组件
 
 包含的核心组件为：Memcached
@@ -24,7 +26,7 @@
 
 ## 本项目安装的是 Memcached 最新版吗？
 
-本项目通过下载 Yum/APT 源进行安装，默认安装胃官方发布的最新版。
+本项目通过 [Docker 镜像](https://hub.docker.com/_/memcached)进行安装，默认安装官方发布的最新版。
 我们会定期检查并测试官方版本的可用性，尽可能保证用户可以顺利安装最新版。
  
 

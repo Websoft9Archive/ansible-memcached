@@ -1,35 +1,40 @@
+---
+sidebarDepth: 3
+---
+
 # 参数
 
 Memcached 预装包包含 Memcached 运行所需一序列支撑软件（简称为“组件”），下面列出主要组件名称、安装路径、配置文件地址、端口、版本等重要的信息。
 
 ## 路径
 
+```
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED             STATUS             PORTS                                           NAMES
+5f7322ff5805   memcached:latest                      "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:11211->11211/tcp, :::11211->11211/tcp   memcached
+```
+
 ### Memcached
 
-Memcached 二进制文件: */usr/bin/memcached*  
-Memcached 配置文件：*/etc/sysconfig/memcached*  
+Memcached 二进制文件: */data/apps/memcached*  
+Memcached 配置文件：*/data/apps/memcached/.env*  
 
-### 其他
+### Docker
 
-暂无辅助工具
+Docker 根目录: */var/lib/docker*  
+Docker 镜像目录: */var/lib/docker/image*   
+Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下根据需要自行创建   
 
 ## 端口号
 
-下面是您在使用本镜像过程中，需要用到的端口号，请通过 [云控制台安全组](https://support.websoft9.com/docs/faq/zh/tech-instance.html)进行设置
+在云服务器中，通过 **[安全组设置](https://support.websoft9.com/docs/faq/zh/tech-instance.html)** 来控制（开启或关闭）端口是否可以被外部访问。 
+
+通过命令`netstat -tunlp` 看查看相关端口，下面列出可能要用到的端口：
+
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
 | Memcached | 11211 | 远程访问 Memcached | 可选 |
 
-运行命令下列命令查看所有端口占用情况
-```
-netstat -anopt | grep LISTEN
-
-tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      5337/sshd            off (0.00/0/0)
-tcp        0      0 0.0.0.0:11211           0.0.0.0:*               LISTEN      651/memcached        off (0.00/0/0)
-tcp6       0      0 :::22                   :::*                    LISTEN      5337/sshd            off (0.00/0/0)
-tcp6       0      0 :::11211                :::*                    LISTEN      651/memcached        off (0.00/0/0)
-```
 
 ## 版本号
 
@@ -43,5 +48,8 @@ sudo cat /data/logs/install_version.txt
 lsb_release -a
 
 # Memcached version
-memcached -h
+docker inspect  memcached | grep com.docker.compose.version
+
+# Docker version
+docker -v
 ```

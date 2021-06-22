@@ -1,9 +1,9 @@
 # Memcached Commands
 
-Use SSH to connect Memcached server and run the command `memcached -h` to start it
+Memcached does not provide specific client. However, standard tools like telnet are enough to test container. Under Linux it is possible to connect by CLI command. We can invoke telnet from host machine, to connect to running Memcached server
 
 ```
-memcached -h
+telnet 127.0.0.1 11211
 ```
 
 More details please refer to docs: [Memcached Commands](https://github.com/memcached/memcached/wiki/Commands)
