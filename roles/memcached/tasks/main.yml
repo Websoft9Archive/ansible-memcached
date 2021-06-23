@@ -32,8 +32,8 @@
   shell: |
     [ -f docker-compose-production.yml ] && mv docker-compose-production.yml docker-compose.yml
     [ -f .env_all ] && mv .env_all .env
-    docker-compose up -d
     sed -i '/APP_PORT=/s/9090/127.0.0.1:9099/g' .env
+    docker-compose up -d
   args:
     chdir: /data/apps/memadmin
 
