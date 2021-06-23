@@ -12,6 +12,7 @@
   git:
     repo: "{{memcached_git_url}}"
     dest: "/data/memcached"
+    version: dev
 
 - name: Run memcached using docker-compose
   shell: docker-compose up -d
@@ -22,6 +23,7 @@
   git:
     repo: "{{memadmin_git_url}}"
     dest: "/data/apps/memadmin"
+    version: dev
 
 - name: Run memadmin using docker-compose
   shell: docker-compose up -d
