@@ -26,6 +26,19 @@ yum update -y
 
 ## Memcached Upgrade
 
-If you can't upgrade Memcached version you want by apt/yum, you can use the install from source for your upgrade
+This deployment solution is based on Docker and so you can upgrade Memcached by the standard process of Docker:  
 
-Refer to official docs: [Install from source](https://github.com/memcached/memcached/wiki/Install)
+> You should complete an image or snapshot backup for instance before upgrade
+
+1. Use **SFTP** to login Server, modify **APP_VERSION** in the **.env** file of Memcached directory
+
+2. Go to the code-server root directory, then pull new images
+   ```
+   cd /data/apps/memcached
+   docker-compose pull
+   ```
+3. Delete old container and recreate new container
+   ```
+   docker-compose down -v
+   docker-compose up -d
+   ```

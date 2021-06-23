@@ -10,6 +10,13 @@ Here are the required username and password for RabbitMQ installation and config
 
 Not set credentials for Memcached
 
+## Memcached-admin
+
+* MySQL administrator username: `admin`
+* MySQL administrator password: Get it from the file of your server */credentials/password.txt*  
+
+> This solution use [Nginx htpasswd](/stack-components.md#nginx) to manage user files for Memcached-admin basic authentication
+
 ## Linux
 
 * Host Name: Server's Internet IP or Public IP of your Instance

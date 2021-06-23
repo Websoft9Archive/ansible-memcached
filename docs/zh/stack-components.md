@@ -11,12 +11,30 @@ Memcached 预装包包含 Memcached 运行所需一序列支撑软件（简称�
 ```
 CONTAINER ID   IMAGE                                 COMMAND                  CREATED             STATUS             PORTS                                           NAMES
 5f7322ff5805   memcached:latest                      "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:11211->11211/tcp, :::11211->11211/tcp   memcached
+e4e671827a3e   hatamiarash7/memcached-admin:latest   "docker-php-entrypoi…"   4 minutes ago   Up 4 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp           memcached-admin
 ```
 
 ### Memcached
 
-Memcached 二进制文件: */data/apps/memcached*  
+Memcached 安装目录: */data/apps/memcached*  
 Memcached 配置文件：*/data/apps/memcached/.env*  
+
+### Memcached-admin
+
+[Memcached-admin](https://github.com/hatamiarash7/Memcached-Admin) 是一个用于管理和监控 Memcached 的可视化工具  
+
+Memcached 安装目录: */data/apps/memcached-admin*  
+Memcached 配置文件：*/data/apps/memcached-admin/.env*  
+
+### Nginx
+
+Nginx 虚拟主机配置文件：*/etc/nginx/conf.d/default.conf*  
+Nginx 主配置文件： */etc/nginx/nginx.conf*  
+Nginx 日志文件： */var/log/nginx*  
+Nginx 伪静态规则目录： */etc/nginx/conf.d/rewrite*  
+Nginx 验证访问文件：*/etc/nginx/.htpasswd/htpasswd.conf*  
+
+> 本部署方案中 Nginx 验证访问文件存储了 Memcached-admin 的账号密码
 
 ### Docker
 
@@ -34,6 +52,7 @@ Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下�
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
 | Memcached | 11211 | 远程访问 Memcached | 可选 |
+| Memcached-admin | 9090 | 通过 Nginx 远程访问 Memcached 可视化工具 | 可选 |
 
 
 ## 版本号
@@ -52,4 +71,7 @@ docker inspect  memcached | grep com.docker.compose.version
 
 # Docker version
 docker -v
+
+# Nginx  Version
+nginx -V
 ```

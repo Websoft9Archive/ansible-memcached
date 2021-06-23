@@ -8,7 +8,7 @@ home: false
 
 [Memcached](https://www.memcached.org/) Memcached是一个自由开源的，高性能，分布式内存对象缓存系统。是一种基于内存的key-value存储，用来存储小块的任意数据（字符串、对象）。这些数据可以是数据库调用、API调用或者是页面渲染的结果。
 
-
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/memcached/memcached-gui-websoft9.png)
 
 ## 改进
 

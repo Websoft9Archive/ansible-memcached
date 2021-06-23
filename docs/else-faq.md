@@ -2,17 +2,17 @@
 
 #### What is the Memcached client?
 
-Memcached client is a program used to communicate with Memcached-Server, you can run the command `memcached -h` to show the help
+Memcached does not provide specific client. However, standard tools like telnet are enough to test container. Under Linux it is possible to connect by CLI command. We can invoke telnet from host machine, to connect to running Memcached server
+
+#### Can I use `memcached -h` to configure Memcached?
+
+No, this deployment use Docker for Memcached, if you want to configure Memcached, refer to [Commandline Arguments](/solution-cli.md#commandline-arguments)
 
 #### Does Memcached need a password to log in?
 
 No password authentication required
 
 #### Is there a web-GUI tool for Memcached?
-
-No
-
-#### Is it possible to modify the source path of Memcached?
 
 Yes
 

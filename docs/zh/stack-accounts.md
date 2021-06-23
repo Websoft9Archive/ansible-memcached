@@ -10,6 +10,13 @@
 
 默认没有开启密码验证 
 
+## Memcached-admin
+
+* 管理员账号：*`admin`*
+* 管理员密码：存储在您的服务器中的文件中 */credentials/password.txt*  
+
+> 本部署方案通过 [Nginx 验证访问功能](/zh/stack-components.md#nginx) 来设置 Memcached-admin 账户密码
+
 ## Linux
 
 * 主机地址：服务公网IP地址

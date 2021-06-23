@@ -1,20 +1,27 @@
 # FAQ
 
-#### 什么是Memcached客户端？
+#### 什么是 Memcached 客户端？
 
-Memcached 客户端是用于与Memcached-Server进行通信的程序，运行 `memcached -h` 命令查看
+Memcached 客户端是用于与 Memcached-Server 进行通信的程序，Memcached 是通过 Telnet 来运行客户端命令的。
 
-#### Memcached需要密码才能登录吗？
+#### Memcached 需要密码才能登录吗？
 
 无需设置密码验证
 
 #### 是否有可视化的数据库管理工具？
 
-暂无
+有，内置 Memcached-admin，访问地址：*http://服务器公网IP:9090*
 
-#### 是否可以修改Memcached的源码路径？
+#### 如何修改Memcached-admin 控制台密码？
 
-Memcached 仅提供一个二进制文件存放到bin目录即可，无需修改
+运行下面的命令即可：  
+```
+htpasswd -b /etc/nginx/.htpasswd admin new_password
+```
+
+#### Memcached 服务端怎么配置？
+
+参考 [命令与配置](/zh/solution-cli.md)
 
 #### 部署和安装有什么区别？
 

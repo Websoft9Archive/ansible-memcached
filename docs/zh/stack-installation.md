@@ -77,17 +77,19 @@
    ```
 4. 输入命令 `quit` 退出系统
 
+5. 体验 Memcached 可视化管理工具 [Memcached-admin](/zh/solution-gui.md)
+
 > 需要了解更多Memcached的使用，请参考：[Memcached Wiki](https://github.com/memcached/memcached/wiki)
 
 ## 常见问题
 
 #### Telnet 无法连接 Memcached？
 
-请检查服务器是否已安装telnet，同时查看11211端口是否开启
+请检查服务器是否已安装 telnet，同时查看云控制台安全组 **11211 端口**是否开启
 
 #### 本部署是否提供Web版的可视化管理工具？
 
-没有，我们暂时还没有发现稳定可靠的 Web-GUI for Memcached
+已提供
 
 #### 本部署是如何安装 Memcached 的？
 

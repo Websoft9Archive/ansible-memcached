@@ -55,5 +55,5 @@ sidebarDepth: 3
 
 通用的手动备份操作步骤如下：
 
-1. 使用SFTP登录服务器，下载 Memcached 配置文件 */data/config/memcached.conf* 到本地
+1. 使用SFTP登录服务器，下载 Memcached 整个目录 */data/apps/memcached* 到本地
 2. 备份完成

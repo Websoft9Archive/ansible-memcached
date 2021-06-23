@@ -49,5 +49,5 @@ Manual backup for application is based on the **Exporting source code and databa
 ```
 The general manual backup operation steps are as follows:
 
-1. Use SSH to connect Memcached server, then backup the configuration file */data/config/memcached.conf*
+1. Use SSH to connect Memcached server, then backup the directory */data/apps/memcached*
 2. Backup completed

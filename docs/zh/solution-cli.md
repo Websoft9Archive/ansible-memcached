@@ -1,10 +1,10 @@
-# Memcached Commands
+# 命令与配置
 
-Memcached 没有传统意义上的客户端，只有服务端命令 `memcached -h`，但本项目中采用 Docker 部署 Memcached，故无法直接使用服务端命令。  
+Memcached 没有传统意义上的客户端，只有服务端命令 `memcached -h`，但本项目中采用 Docker 部署 Memcached，虽不能直接使用服务端命令，但可以预先配置再启动容器。  
 
 ## 服务端
 
-服务端设置，需要在运行容器的时候带入命令，具体操作步骤：  
+服务端设置，需要在运行容器的时候带入配置参数，具体操作步骤：  
 
 1. 编辑 Memcached 容器编排文件 */data/apps/memcached/docker-compose.yml*，修改增加更多的 **command** 项，然后保存
     ```

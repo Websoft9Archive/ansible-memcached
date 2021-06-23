@@ -77,6 +77,8 @@ If you have completed the Memcached deployment on Cloud Platform, the following 
    ```
 4. Run the command `quit` if you want to exist Memcached
 
+5. Test Memcached Web-based GUI tool [Memcached-admin](solution-gui.md)
+
 > More useful Memcached guide, please refer to [Memcached Wiki](https://github.com/memcached/memcached/wiki)
 
 ## Q&A 
@@ -87,7 +89,7 @@ Please make sure you Telnet installed and port **11211** enabled
 
 #### Is there any Web-GUI tool for Memcached in this deployment solution?
 
-No
+Yes
 
 #### How did this deployment install Memcached?
 
