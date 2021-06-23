@@ -1,3 +1,7 @@
 - name: check_memcached_service
   debug:
-    var: check_memcached_service.stdout_lines
+    var: check_memcached_service.stdout
+
+- name: check_memadmin_service
+  debug:
+    var: check_memadmin_service.stdout

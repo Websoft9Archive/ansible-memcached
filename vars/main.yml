@@ -1,0 +1,12 @@
+nginx_reverse_proxy_port: "9099"
+nginx_listen_port: "9090"
+
+nginx_htpasswd: True
+
+init_application:
+  memadmin:
+    username: "admin"
+    password: "admin"
+    commands: 
+      - htpasswd -b /etc/nginx/.htpasswd admin $new_password
+      - systemctl restart nginx

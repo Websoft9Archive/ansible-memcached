@@ -1,34 +1,51 @@
+---
 - name: Delete memcached dir for sec_installation
-  shell: rm -rf {{memcached_work_dir}}
+  shell: rm -rf /data/memcached /data/apps/memadmin
+
+- name: Create dir for memcached
+  file:
+    path: "/data/memcached"
+    state: directory
+    recurse: yes
 
 - name: Clone memcached in Websoft9 
   git:
     repo: "{{memcached_git_url}}"
-    dest: "{{memcached_work_dir}}"
+    dest: "/data/memcached"
 
-- name: Rename compose and env filename
+- name: Rename filename and Run memcached using docker-compose 
   shell: |
-    rm -rf docker-compose.yml
     [ -f docker-compose-production.yml ] && mv docker-compose-production.yml docker-compose.yml
     [ -f .env_all ] && mv .env_all .env
-    sed -i 's/APP_VERSION=.*/APP_VERSION={{memcached_version}}/g' /data/apps/memcached/.env
-  args:
-    chdir: '{{memcached_work_dir}}'
-    
-- name: Run docker-compose 
-  shell: | 
     docker-compose up -d
-    sleep 30
   args:
-    chdir: '{{memcached_work_dir}}'
+    chdir: /data/memcached
 
-# check service and version
-- name: Check memcached service 
-  shell: >
-    docker ps -a |awk '{print $2,$7}'
+- name: Clone memadmin in Websoft9 
+  git:
+    repo: "{{memadmin_git_url}}"
+    dest: "/data/apps/memadmin"
+
+- name: Rename filename and Run memadmin using docker-compose
+  shell: |
+    [ -f docker-compose-production.yml ] && mv docker-compose-production.yml docker-compose.yml
+    [ -f .env_all ] && mv .env_all .env
+    sed -i '/APP_PORT=/s/9090/127.0.0.1:9099/g' .env
+    docker-compose up -d
+  args:
+    chdir: /data/apps/memadmin
+
+# check service state
+- name: Check memcached Service     
+  shell: docker ps |grep memcached  
   register: check_memcached_service
   notify: check_memcached_service
-    
-- name: Check memcached version
-  shell: |
-    sudo echo "memcached version:" $(docker images |grep memcached |awk '{print $1,$2}') |sudo tee -a /data/logs/install_version.txt 
+
+- name: Check memcached Service     
+  shell: docker ps |grep memadmin
+  register: check_memadmin_service
+  notify: check_memadmin_service
+
+# check version
+- name: check memcached version
+  shell: sudo echo "memcached version:" `docker inspect memcached |grep VERSION |cut -d= -f2` |tee -a /data/logs/install_version.txt
