@@ -14,8 +14,11 @@
     dest: "/data/memcached"
     version: dev
 
-- name: Run memcached using docker-compose
-  shell: docker-compose up -d
+- name: Rename filename and Run memcached using docker-compose 
+  shell: |
+    mv docker-compose-production.yml docker-compose.yml
+    mv .env_all .env
+    docker-compose up -d
   args:
     chdir: /data/memcached
 
@@ -26,7 +29,10 @@
     version: dev
 
 - name: Run memadmin using docker-compose
-  shell: docker-compose up -d
+  shell: |
+    mv docker-compose-production.yml docker-compose.yml
+    mv .env_all .env
+    docker-compose up -d
   args:
     chdir: /data/apps/memadmin
 
