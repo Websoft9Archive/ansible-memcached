@@ -28,11 +28,12 @@
     dest: "/data/apps/memadmin"
     version: dev
 
-- name: Run memadmin using docker-compose
+- name: Rename filename and Run memadmin using docker-compose
   shell: |
     mv docker-compose-production.yml docker-compose.yml
     mv .env_all .env
     docker-compose up -d
+    sed -i '/APP_PORT=/s/9090/127.0.0.1:9099/g' .env
   args:
     chdir: /data/apps/memadmin
 
