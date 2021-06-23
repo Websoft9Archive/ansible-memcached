@@ -43,8 +43,4 @@
 
 # check version
 - name: check memcached version
-  shell: sudo echo  |tee -a /data/logs/install_version.txt
-
-# check version
-- name: check memadmin version
-  shell: sudo echo  |tee -a /data/logs/install_version.txt
+  shell: sudo echo "memcached version:" `docker inspect memcached |grep VERSION |cut -d= -f2` |tee -a /data/logs/install_version.txt
