@@ -25,15 +25,6 @@
     memcached_version: "{{memcached_select[memcached_selection]}}" 
 
   roles:
-<<<<<<< HEAD
-    - { role: role_common, tags: "role_common"} 
-    - { role: role_cloud, tags: "role_cloud" }
-    - { role: role_docker , tags: "role_docker"}
-    - { role: memcached, tags: "memcached"}
-    - { role: role_preend, tags: "role_preend" }
-    - { role: role_end, tags: "role_end" }
-
-=======
   - { role: role_common , tags: "role_common"} 
   - { role: role_cloud , tags: "role_cloud"} 
   - { role: role_docker , tags: "role_docker"} 
@@ -43,4 +34,3 @@
   - { role: role_init , tags: "role_init"}  
   - { role: role_preend  , tags: "role_preend"}  
   - { role: role_end  , tags: "role_end"}
->>>>>>> dev
