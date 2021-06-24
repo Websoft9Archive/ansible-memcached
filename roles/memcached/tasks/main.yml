@@ -1,26 +1,5 @@
 ---
-- name: Delete memcached dir for sec_installation
-  shell: rm -rf /data/memcached /data/apps/memadmin
-
-- name: Create dir for memcached
-  file:
-    path: "/data/memcached"
-    state: directory
-    recurse: yes
-
-- name: Clone memcached in Websoft9 
-  git:
-    repo: "{{memcached_git_url}}"
-    dest: "/data/memcached"
-
-- name: Rename filename and Run memcached using docker-compose 
-  shell: |
-    [ -f docker-compose-production.yml ] && mv docker-compose-production.yml docker-compose.yml
-    [ -f .env_all ] && mv .env_all .env
-    docker-compose up -d
-  args:
-    chdir: /data/memcached
-
+# install memadmin
 - name: Clone memadmin in Websoft9 
   git:
     repo: "{{memadmin_git_url}}"
@@ -36,16 +15,7 @@
     chdir: /data/apps/memadmin
 
 # check service state
-- name: Check memcached Service     
-  shell: docker ps |grep memcached  
-  register: check_memcached_service
-  notify: check_memcached_service
-
-- name: Check memcached Service     
+- name: Check memadmin Service     
   shell: docker ps |grep memadmin
   register: check_memadmin_service
   notify: check_memadmin_service
-
-# check version
-- name: check memcached version
-  shell: sudo echo "memcached version:" `docker inspect memcached |grep VERSION |cut -d= -f2` |tee -a /data/logs/install_version.txt
