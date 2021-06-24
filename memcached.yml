@@ -6,24 +6,7 @@
 
   vars_files:
     - vars/main.yml
-
-  vars_prompt:
-    - name: 'memcached_selection'
-      prompt: "\nPlease choose the number for Memcached version [ 1/2/3 ] \n\n
-      1: Memcached1.6\n
-      2: Memcached1.5\n
-      3: Memcached1.4\n"
-      private: no
-      default: 1
-  
-  vars:
-    memcached_select:
-      '1': '1.6'
-      '2': '1.5'
-      '3': '1.4'
-
-    memcached_version: "{{memcached_select[memcached_selection]}}" 
-
+    
   roles:
   - { role: role_common , tags: "role_common"} 
   - { role: role_cloud , tags: "role_cloud"} 
