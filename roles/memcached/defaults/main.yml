@@ -1,3 +1,1 @@
-memcached_git_url: "https://github.com/Websoft9/docker-memcached.git"
-
 memadmin_git_url: "https://github.com/Websoft9/docker-memadmin.git"
