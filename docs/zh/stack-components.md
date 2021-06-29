@@ -16,15 +16,15 @@ e4e671827a3e   hatamiarash7/memcached-admin:latest   "docker-php-entrypoi…"   
 
 ### Memcached
 
-Memcached 安装目录: */data/apps/memcached*  
-Memcached 配置文件：*/data/apps/memcached/.env*  
+Memcached 安装目录: */data/db/memcached*  
+Memcached 配置文件：*/data/db/memcached/.env*  
 
 ### Memcached-admin
 
 [Memcached-admin](https://github.com/hatamiarash7/Memcached-Admin) 是一个用于管理和监控 Memcached 的可视化工具  
 
-Memcached 安装目录: */data/apps/memcached-admin*  
-Memcached 配置文件：*/data/apps/memcached-admin/.env*  
+Memcached 安装目录: */data/apps/memadmin*  
+Memcached 配置文件：*/data/apps/memadmin/.env*  
 
 ### Nginx
 
