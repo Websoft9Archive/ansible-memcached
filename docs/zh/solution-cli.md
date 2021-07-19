@@ -6,7 +6,7 @@ Memcached 没有传统意义上的客户端，只有服务端命令 `memcached -
 
 服务端设置，需要在运行容器的时候带入配置参数，具体操作步骤：  
 
-1. 编辑 Memcached 容器编排文件 */data/apps/memcached/docker-compose.yml*，修改增加更多的 **command** 项，然后保存
+1. 编辑 Memcached 容器编排文件 */data/db/memcached/docker-compose.yml*，修改增加更多的 **command** 项，然后保存
     ```
     version: '3.8'
     services:
@@ -21,7 +21,7 @@ Memcached 没有传统意义上的客户端，只有服务端命令 `memcached -
 
 2. 重新创建容器后生效
    ```
-   cd /data/apps/memcached
+   cd /data/db/memcached
    sudo docker-compose up -d
    ```
 

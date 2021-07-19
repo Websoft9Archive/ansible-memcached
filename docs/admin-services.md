@@ -14,10 +14,10 @@ sudo docker stats memcached
 ### Memcached-admin
 
 ```shell
-sudo docker start memcached-admin
-sudo docker stop memcached-admin
-sudo docker restart memcached-admin
-sudo docker stats memcached-admin
+sudo docker start memadmin
+sudo docker stop memadmin
+sudo docker restart memadmin
+sudo docker stats memadmin
 ```
 
 ### Nginx

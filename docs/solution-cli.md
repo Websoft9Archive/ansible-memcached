@@ -6,7 +6,7 @@ You can configure Memcached container (Server) and use Telnet client at this dep
 
 If you want to configure Memcached Server, you should configure [Commandline Arguments](https://github.com/memcached/memcached/wiki/ConfiguringServer#commandline-arguments) by like below steps:  
 
-1. Use SFTP to connect Server and edit */data/apps/memcached/docker-compose.yml* file, add more items for **command** parameter
+1. Use SFTP to connect Server and edit */data/db/memcached/docker-compose.yml* file, add more items for **command** parameter
     ```
     version: '3.8'
     services:
@@ -20,7 +20,7 @@ If you want to configure Memcached Server, you should configure [Commandline Arg
 
 2. Recreate containers
    ```
-   cd /data/apps/memcached
+   cd /data/db/memcached
    sudo docker-compose up -d
    ```
 

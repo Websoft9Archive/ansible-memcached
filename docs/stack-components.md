@@ -18,8 +18,8 @@ e4e671827a3e   hatamiarash7/memcached-admin:latest   "docker-php-entrypoi…"   
 
 ### Memcached
 
-Memcached directory: */data/apps/memcached*  
-Memcached configuration file: */data/apps/memcached/.env*  
+Memcached directory: */data/db/memcached*  
+Memcached configuration file: */data/db/memcached/.env*  
 
 ### Memcached-admin
 
