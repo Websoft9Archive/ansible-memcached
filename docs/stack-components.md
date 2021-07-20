@@ -69,7 +69,7 @@ sudo cat /data/logs/install_version.txt
 lsb_release -a
 
 # Memcached version
-docker inspect  memcached | grep com.docker.compose.version
+docker inspect  memcached | grep MEMCACHED_VERSION
 
 # Docker version
 docker -v
