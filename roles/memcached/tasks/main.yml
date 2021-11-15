@@ -15,8 +15,8 @@
     chdir: /data/apps/memadmin
 
 # check version
-- name: check memcached version
-  shell: sudo echo "memcached version:" `docker inspect hatamiarash7/memcached-admin |grep VERSION |cut -d = -f2 |awk  'NR==1' ` |tee -a /data/logs/install_version.txt
+- name: check memadmin version
+  shell: sudo echo "memadmin version:" `docker inspect hatamiarash7/memcached-admin |grep VERSION |cut -d = -f2 |awk  'NR==1' ` |tee -a /data/logs/install_version.txt
 
 # check service state
 - name: Check memadmin Service     
