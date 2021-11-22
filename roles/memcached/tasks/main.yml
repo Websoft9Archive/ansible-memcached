@@ -14,6 +14,11 @@
   args:
     chdir: /data/apps/memadmin
 
+#check memadmin version
+- name: Get memadmin version
+  shell: > 
+    sudo echo "memadmin version: \"  \" "  |tee -a /data/logs/install_version.txt  
+
 # check service state
 - name: Check memadmin Service     
   shell: docker ps |grep memadmin
